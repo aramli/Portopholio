@@ -1,305 +1,301 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ramli — Portofolio</title>
-  <meta name="description" content="Portofolio Ramli, mahasiswa Informatics Engineering: HR digitalization, AI, dan kuliner.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramli — Portofolio</title>
+<meta name="description" content="Portofolio Ramli: HR Officer, System Developer, dan pemburu kuliner.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;0,800;1,800&family=JetBrains+Mono:wght@500;700&family=Fraunces:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root,[data-p="hr"]{--bg:#f1f3f1;--card:#fff;--ink:#17211c;--muted:#65726b;--line:#e1e6e2;--ac:#34d27b;--acink:#0e6b3b;--soft:#e3f8ec;--on:#07200f;--fd:"Plus Jakarta Sans",Roboto,Arial,sans-serif}
+[data-p="dev"]{--bg:#0a110d;--card:#111b15;--ink:#d9f7e4;--muted:#7fa28d;--line:#1e3026;--ac:#39ff88;--acink:#39ff88;--soft:#0f2a1b;--on:#03160b;--fd:"JetBrains Mono",ui-monospace,monospace}
+[data-p="kuliner"]{--bg:#fff3e3;--card:#fffaf2;--ink:#2b1a10;--muted:#8a6a55;--line:#f0d9bf;--ac:#e8591a;--acink:#b53f0a;--soft:#ffe3cc;--on:#fff;--fd:Fraunces,Georgia,serif}
+[data-p="weekend"]{--bg:#12062b;--card:#1d0d42;--ink:#f6eaff;--muted:#b89ddb;--line:#3a1f73;--ac:#ff3df2;--acink:#ff8af7;--soft:#34105e;--on:#1a0033;--ac2:#3df5ff;--fd:"Plus Jakarta Sans",Roboto,Arial,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Plus Jakarta Sans",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;transition:background .5s,color .5s;overflow-x:hidden}
+h1,h2,h3{font-family:var(--fd);letter-spacing:-.02em;line-height:1.1}
+h2{font-size:clamp(1.6rem,3.2vw,2.4rem);margin-bottom:20px}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.w{padding:0 clamp(20px,5vw,96px)}
+.prog{position:fixed;top:0;left:0;height:4px;width:0;background:var(--ac);z-index:50}
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:16px;padding:12px clamp(20px,5vw,96px);background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:1.25rem;background:none;border:0}
+.nav{display:flex;gap:6px;overflow-x:auto;margin-left:auto;scrollbar-width:none}
+.nav button{background:none;border:1px solid transparent;border-radius:999px;padding:7px 14px;white-space:nowrap;font-weight:500;color:var(--muted);transition:.2s}
+.nav button:hover{color:var(--ink);border-color:var(--line)}
+.nav button.act{background:var(--ac);color:var(--on);font-weight:700}
+.view{display:none;min-height:90vh;padding-bottom:72px;position:relative}
+.view.on{display:block;animation:fade .5s}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}}
+@keyframes up{from{opacity:0;transform:translateY(60%) rotate(8deg)}}
+@keyframes blink{50%{opacity:0}}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes drift{50%{transform:translate(30px,-40px) scale(1.15)}}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.pc{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:28px;padding:clamp(22px,3vw,36px);position:relative;overflow:hidden}
+.pc::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--ac) 20%,transparent),transparent 70%)}
+.pc:hover::after{opacity:1}
+.chip{display:inline-block;padding:5px 13px;border-radius:999px;background:var(--soft);color:var(--acink);font-weight:700;font-size:.82rem;margin:0 6px 6px 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-weight:700;border:2px solid var(--line);background:transparent;transition:transform .15s}
+.btn:hover{transform:translateY(-3px)}
+.btn.p{background:var(--ac);color:var(--on);border-color:var(--ac)}
+.lead{color:var(--muted);max-width:62ch;font-size:1.05rem}
+.grid{display:grid;gap:20px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.sec{margin-top:clamp(40px,6vw,72px)}
+/* HOME */
+.hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;gap:16px;padding-top:40px}
+.hero h1{font-size:clamp(4.5rem,21vw,17rem);font-weight:800;letter-spacing:-.06em;line-height:.9}
+.hero h1 span{display:inline-block;animation:up .8s cubic-bezier(.2,.8,.2,1) backwards;animation-delay:calc(var(--i)*90ms + .2s);transition:transform .25s,color .25s}
+.hero h1 span:hover{transform:translateY(-14px) rotate(-6deg);color:var(--ac)}
+.tag{font-size:clamp(1.2rem,3vw,2rem);color:var(--muted);max-width:30ch}
+.role{font-weight:700;font-size:1.1rem}.role b{color:var(--acink)}
+.caret{display:inline-block;width:3px;height:1.1em;background:var(--ac);margin-left:3px;vertical-align:-.2em;animation:blink 1s steps(2) infinite}
+.mq{overflow:hidden;background:var(--ac);color:var(--on);margin:0 -9999px;padding:14px 9999px;transform:rotate(-1deg)}
+.mq div{display:flex;width:max-content;animation:slide 30s linear infinite}
+.mq span{font-weight:800;white-space:nowrap;padding-right:40px}.mq span::after{content:"✦";margin-left:40px}
+.about{display:grid;grid-template-columns:220px 1fr;gap:clamp(20px,4vw,56px);align-items:center}
+.ava{width:220px;aspect-ratio:1;border-radius:36px;padding:7px;background:var(--ac);transform:rotate(-4deg);transition:transform .3s}
+.ava:hover{transform:rotate(3deg) scale(1.05)}.ava img{width:100%;height:100%;object-fit:cover;border-radius:30px}
+.about p{font-size:1.15rem;max-width:64ch}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cd{text-align:left;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;transition:transform .3s,border-color .3s;width:100%}
+.cd:hover{transform:translateY(-8px);border-color:var(--ac)}
+.cd .em{font-size:3rem;margin-bottom:auto;transition:transform .3s}.cd:hover .em{transform:scale(1.25) rotate(-8deg)}
+.cd small{color:var(--muted);font-weight:700}.cd h3{font-size:1.7rem}
+.tz{max-height:0;opacity:0;overflow:hidden;transition:max-height .4s,opacity .4s;color:var(--muted)}
+.cd:hover .tz,.cd:focus-visible .tz{max-height:220px;opacity:1}
+@media(hover:none){.tz{max-height:none;opacity:1}}
+.cv{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:20px}
+/* PROFIL */
+.prof{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start;margin-top:36px}
+.side{position:sticky;top:84px;text-align:center}
+.side .ava{margin:0 auto 20px;width:160px}.side h2{margin-bottom:4px}.side .btn{width:100%;justify-content:center;margin-top:10px}
+.tl{list-style:none;padding:0}.tl li{position:relative;padding:0 0 26px 28px;border-left:2px solid var(--line);margin-left:6px}
+.tl li:last-child{border-color:transparent;padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--ac);border:3px solid var(--card);box-shadow:0 0 0 2px var(--ac)}
+.when{display:inline-block;padding:3px 12px;border-radius:999px;background:var(--soft);color:var(--acink);font-weight:700;font-size:.8rem}
+.org{color:var(--muted);font-weight:500}.tl p:not(.org),.edu p{color:var(--muted);font-size:.95rem;max-width:70ch}
+.stack>*+*{margin-top:28px}
+/* HR */
+.big{font-size:clamp(2.4rem,8vw,6.5rem);font-weight:800;letter-spacing:-.04em;line-height:1;padding-top:48px;max-width:16ch}
+.big em{font-style:normal;color:var(--ac)}
+.num{font-size:3rem;font-weight:800;color:var(--ac);line-height:1}
+/* DEV */
+.term{background:#050a07;border:1px solid var(--line);border-radius:20px;padding:24px;font-family:var(--fd);font-size:.95rem;margin-top:40px;color:#bff5d4;line-height:1.9}
+.term i{color:var(--ac);font-style:normal}.term .dots{display:flex;gap:7px;margin-bottom:14px}.term .dots b{width:11px;height:11px;border-radius:50%;background:#26402f}
+.proj h3{font-size:1.2rem;margin:10px 0 14px}.proj dt{font-family:var(--fd);color:var(--acink);font-size:.8rem;margin-top:10px}.proj dd{color:var(--muted);font-size:.95rem}
+.st{font-family:var(--fd);font-size:.75rem;border:1px solid var(--ac);color:var(--acink);padding:3px 10px;border-radius:6px}
+/* KULINER */
+.kh{font-size:clamp(3rem,10vw,8rem);font-weight:800;letter-spacing:-.04em;line-height:.95;padding-top:48px}.kh em{color:var(--ac)}
+.mas{columns:4 240px;column-gap:20px}
+.mas figure{break-inside:avoid;margin-bottom:20px;position:relative;border-radius:24px;overflow:hidden;background:var(--card);padding:10px 10px 0;box-shadow:0 14px 30px rgba(120,60,10,.12);transition:transform .3s}
+.mas figure:hover{transform:rotate(-1.5deg) scale(1.02)}
+.mas img{width:100%;border-radius:16px;object-fit:cover;transition:transform .6s}.mas figure:hover img{transform:scale(1.06)}
+.mas figure:nth-child(odd) img{aspect-ratio:4/5}.mas figure:nth-child(even) img{aspect-ratio:1}
+.mas figcaption{padding:12px 6px 14px;font-family:var(--fd);font-weight:600}.mas figcaption small{display:block;color:var(--muted);font-family:"Plus Jakarta Sans",sans-serif;font-weight:500}
+/* WEEKEND */
+.wk{font-size:clamp(3.2rem,13vw,10rem);font-weight:800;font-style:italic;letter-spacing:-.05em;line-height:.9;padding-top:48px;background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px color-mix(in srgb,var(--ac) 60%,transparent))}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none;animation:drift 9s ease-in-out infinite}
+.o1{width:340px;height:340px;background:var(--ac);right:4%;top:6%}.o2{width:280px;height:280px;background:var(--ac2);left:-60px;top:40%;animation-delay:-4s}
+.tile{min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;transition:transform .3s,box-shadow .3s}
+.tile:hover{transform:translateY(-8px) rotate(-1.5deg);box-shadow:0 0 36px color-mix(in srgb,var(--ac) 45%,transparent);border-color:var(--ac)}
+.tile .em{font-size:3rem;margin-bottom:auto}
+.vlog{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.play{width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;font-size:2rem;color:#12062b;box-shadow:0 0 40px color-mix(in srgb,var(--ac) 60%,transparent)}
+footer{margin-top:72px;padding:36px clamp(20px,5vw,96px);border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+footer div{display:flex;flex-wrap:wrap;gap:10px}
+@media(max-width:1000px){.g3,.g4,.cards{grid-template-columns:repeat(2,1fr)}.prof{grid-template-columns:1fr}.side{position:static}}
+@media(max-width:620px){.g2,.g3,.g4,.cards,.about{grid-template-columns:1fr}.cd{min-height:260px}.about .ava{width:150px}.brand{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
-<body>
-  <div class="progress" id="progress"></div>
-  <header class="topbar">
-    <a class="brand" href="#top">ramli.</a>
-    <nav>
-      <a href="#tentang">Tentang</a>
-      <a href="#pengalaman">Pengalaman</a>
-      <a href="#projek">Projek</a>
-      <a href="#skill">Skill</a>
-      <a href="#kuliner">Kuliner</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Ganti tema">🌓</button>
-  </header>
+<body data-p="hr">
+<div class="prog" id="prog"></div>
+<header class="top">
+  <button class="brand" data-go="home">ramli.</button>
+  <nav class="nav" aria-label="Navigasi utama">
+    <button data-go="home">Home</button><button data-go="profil">Profil formal</button><button data-go="hr">🧑‍💼 HR</button><button data-go="dev">💻 Dev</button><button data-go="kuliner">🍜 Kuliner</button><button data-go="weekend">🎧 Weekend</button>
+  </nav>
+</header>
 
-  <main id="top" class="wrap">
-    <!-- HERO -->
-    <section class="hero card">
-      <span class="blob b1" aria-hidden="true"></span><span class="blob b2" aria-hidden="true"></span>
-      <span class="chip chip-live"><i></i> HR Officer di PT Denso Manufacturing Indonesia</span>
-      <h1>Ramli</h1>
-      <p class="tagline">Efficiency in systems, empathy in people.</p>
-      <p class="role">Lagi jadi: <span id="typed">HR Officer</span><i class="caret"></i></p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#projek">Lihat projek</a>
-        <a class="btn btn-ghost" href="#kontak">Ajak ngobrol</a>
-      </div>
-    </section>
+<!-- HOME -->
+<main>
+<section class="view on w" id="home">
+  <div class="hero">
+    <h1 id="name">Ramli</h1>
+    <p class="tag">Efficiency in systems, empathy in people.</p>
+    <p class="role">Lagi jadi: <b id="typed">HR Officer</b><i class="caret"></i></p>
+    <div><a class="btn p" href="#kenali" data-scroll>Kenali Ramli ↓</a> <button class="btn" data-go="profil">Profil formal</button></div>
+  </div>
+  <div class="mq" aria-hidden="true"><div><span>HR Digitalization</span><span>Payroll</span><span>HRIS</span><span>Power Platform</span><span>SQL Server</span><span>Python</span><span>AI</span><span>Kuliner</span><span>Weekend Mode</span><span>HR Digitalization</span><span>Payroll</span><span>HRIS</span><span>Power Platform</span><span>SQL Server</span><span>Python</span><span>AI</span><span>Kuliner</span><span>Weekend Mode</span></div></div>
+  <div class="sec about rv">
+    <figure class="ava"><img src="assets/foto-profil.jpg" alt="Foto profil Ramli"></figure>
+    <div><h2>Tentang saya</h2>
+      <p>Saya Ramli, HR Officer di PT Denso Manufacturing Indonesia dengan tanggung jawab utama sebagai PIC payroll, sambil mendukung digitalisasi sistem HR. Di luar jam kerja saya kuliah S1 Teknik Informatika, menyukai AI, dan hobi berburu kuliner. Bagi saya payroll bukan sekadar angka, tapi soal kepercayaan.</p></div>
+  </div>
+  <div class="sec" id="kenali"><h2 class="rv">Kenali Ramli as…</h2>
+    <div class="cards">
+      <button class="pc cd rv" data-go="hr" data-p="hr"><span class="em">🧑‍💼</span><small>Kenali Ramli as</small><h3>HR Officer</h3><div class="tz">Payroll, HRIS, dan HR digitalization. Sisi yang rapi, akurat, dan peduli orang.</div><span class="chip">Payroll</span></button>
+      <button class="pc cd rv" data-go="dev" data-p="dev"><span class="em">💻</span><small>Kenali Ramli as</small><h3>System Developer</h3><div class="tz">Aplikasi web, Power Platform, SQL, dan dashboard. Sisi yang suka mengotomatiskan.</div><span class="chip">SQL Server</span></button>
+      <button class="pc cd rv" data-go="kuliner" data-p="kuliner"><span class="em">🍜</span><small>Kenali Ramli as</small><h3>Pemburu Kuliner</h3><div class="tz">Foto makanan estetik dan catatan rasa. Sisi yang selalu lapar.</div><span class="chip">Foodie</span></button>
+      <button class="pc cd rv" data-go="weekend" data-p="weekend"><span class="em">🎧</span><small>Kenali Ramli as</small><h3>Weekend Mode</h3><div class="tz">Nongkrong, musik, event, dan mini vlog edukasi. Sisi yang lagi santai.</div><span class="chip">Good vibes</span></button>
+    </div>
+    <div class="pc cv rv"><div><h3>Butuh versi formal?</h3><p class="lead">Pengalaman, pendidikan, skill, dan kontak lengkap seperti di LinkedIn.</p></div><button class="btn p" data-go="profil">Buka profil formal →</button></div>
+  </div>
+</section>
 
-    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>HR Digitalization</span><span>Payroll</span><span>HRIS</span><span>AI</span><span>Power Platform</span><span>SQL Server</span><span>Python</span><span>Kuliner</span><span>HR Digitalization</span><span>Payroll</span><span>HRIS</span><span>AI</span><span>Power Platform</span><span>SQL Server</span><span>Python</span><span>Kuliner</span></div></div>
+<!-- PROFIL FORMAL -->
+<section class="view w" id="profil">
+  <div class="prof">
+    <aside class="pc side rv"><figure class="ava"><img src="assets/foto-profil.jpg" alt="Foto Ramli"></figure>
+      <h2>Andi Ramli</h2><p class="org">Human Resource Officer<br>PIC Payroll &amp; HR Digitalization<br>PT Denso Manufacturing Indonesia</p>
+      <a class="btn p" href="mailto:email@contoh.com">Kirim email</a>
+      <a class="btn" href="https://www.linkedin.com/in/andi-ramli-3215b4403" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/username" target="_blank" rel="noopener">GitHub</a></aside>
+    <div class="stack">
+      <div class="pc rv"><h2>Ringkasan</h2><p class="lead">HR Officer dengan fokus payroll dan digitalisasi sistem HR: memastikan akurasi, kepatuhan, dan ketepatan waktu penggajian, sekaligus membangun sistem yang membuat proses HR lebih sederhana dan siap masa depan. Berlatar System Developer, saat ini menempuh S1 Teknik Informatika.</p></div>
+      <div class="pc rv"><h2>Pengalaman</h2><ol class="tl">
+        <li><span class="when">Jul 2025 - sekarang</span><h3>Human Resources Officer</h3><p class="org">PT Denso Manufacturing Indonesia, Cikarang Barat</p><p>Mengelola payroll dan inisiatif HR digitalization; mendukung implementasi HRIS; berkolaborasi lintas departemen untuk solusi HR yang transparan dan efektif.</p></li>
+        <li><span class="when">Jun 2023 - Jun 2025</span><h3>System Developer</h3><p class="org">PT Denso Manufacturing Indonesia</p><p>Tim pengembang sistem web dan solusi Microsoft Power Platform untuk operasional manufaktur; membangun aplikasi dan alur otomatisasi untuk efisiensi dan akurasi data.</p></li>
+        <li><span class="when">Jun 2022 - Jun 2023</span><h3>Student Trainee (Program KOSEN)</h3><p class="org">PT Denso Indonesia</p><p>Terpilih dalam program pendidikan tambahan PT Denso Indonesia untuk lulusan SMK sebelum masuk Genba (area produksi).</p></li>
+        <li><span class="when">Sep 2021 - Feb 2022</span><h3>Student Internship</h3><p class="org">PT Sanbe Farma</p><p>Help desk dan technical support.</p></li></ol></div>
+      <div class="pc rv"><h2>Pendidikan</h2><ol class="tl">
+        <li><span class="when">Sekarang · Semester 3</span><h3>Universitas Pelita Bangsa</h3><p class="org">S1 Teknik Informatika</p></li>
+        <li><span class="when">Jun 2022 - Jun 2023</span><h3>Politeknik STMI Jakarta</h3><p class="org">D1 Engineering/Industrial Management · IPK 3,92</p></li>
+        <li><span class="when">Jun 2019 - Jun 2022</span><h3>SMK Negeri 1 Cimahi</h3><p class="org">Sistem Informasi Jaringan dan Aplikasi</p></li></ol></div>
+      <div class="pc rv"><h2>Skills</h2><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">HRIS</span><span class="chip">Payroll Processing</span><span class="chip">Power Platform</span><span class="chip">Microsoft SQL Server</span><span class="chip">Data Structures</span><span class="chip">Leadership</span><span class="chip">Empathy</span><span class="chip">Communication</span></div>
+    </div>
+  </div>
+</section>
 
-    <!-- TENTANG -->
-    <section id="tentang" class="about card">
-      <figure class="avatar">
-        <img src="assets/foto-profil.jpg" alt="Foto profil Ramli">
-      </figure>
-      <div>
-        <h2>Tentang saya</h2>
-        <p>Mahasiswa Informatics Engineering yang tertarik pada <strong>HR digitalization</strong> dan <strong>AI</strong>. Saat ini saya bekerja sebagai HR Officer dengan fokus payroll dan digitalisasi sistem HR: memastikan penggajian akurat, tepat waktu, dan sesuai aturan, sambil membuat prosesnya lebih simpel untuk semua orang.</p>
-        <ul class="chips">
-          <li class="chip">Informatics Engineering</li>
-          <li class="chip">HR Digitalization</li>
-          <li class="chip">AI</li>
-          <li class="chip">Kuliner</li>
-        </ul>
-      </div>
-    </section>
+<!-- HR -->
+<section class="view w" id="hr">
+  <h1 class="big">Payroll bukan sekadar angka. <em>Itu kepercayaan.</em></h1>
+  <p class="lead sec">Sebagai HR Officer saya menjaga penggajian tetap akurat, patuh aturan, dan tepat waktu, sambil mendorong solusi digital supaya proses HR lebih mulus untuk karyawan dan perusahaan.</p>
+  <div class="grid g3 sec">
+    <div class="pc rv"><div class="num">01</div><h3>Akurasi &amp; kepatuhan</h3><p class="lead">Setiap proses penggajian dicek dan sesuai aturan.</p></div>
+    <div class="pc rv"><div class="num">02</div><h3>HRIS &amp; digitalisasi</h3><p class="lead">Mendukung implementasi HRIS untuk efisiensi operasional.</p></div>
+    <div class="pc rv"><div class="num">03</div><h3>Kolaborasi lintas departemen</h3><p class="lead">Solusi HR yang transparan dan sesuai kebutuhan bisnis.</p></div>
+  </div>
+  <div class="grid g2 sec">
+    <div class="pc rv"><h2>Projek HR digitalization</h2><p class="lead">Ganti dengan projekmu: konsep sistem absensi, cuti, dan data karyawan dalam satu alur.</p><span class="chip">HRIS</span><span class="chip">Payroll</span></div>
+    <div class="pc rv"><h2>Soft skills</h2><span class="chip">💚 Empathy</span><span class="chip">🧭 Leadership</span><span class="chip">💬 Communication</span></div>
+  </div>
+</section>
 
-    <!-- PENGALAMAN & PENDIDIKAN -->
-    <section id="pengalaman" class="section">
-      <h2>Pengalaman</h2>
-      <ol class="timeline card">
-        <li>
-          <span class="when">Jul 2025 - sekarang</span>
-          <h3>Human Resources Officer</h3>
-          <p class="org">PT Denso Manufacturing Indonesia, Cikarang Barat</p>
-          <p>PIC payroll dan inisiatif HR digitalization. Memastikan akurasi, kepatuhan, dan ketepatan waktu payroll, sambil mendukung implementasi HRIS untuk meningkatkan efisiensi. Aktif berkolaborasi lintas departemen untuk menghadirkan solusi HR yang transparan dan efektif sesuai kebutuhan bisnis.</p>
-        </li>
-        <li>
-          <span class="when">Jun 2023 - Jun 2025</span>
-          <h3>System Developer</h3>
-          <p class="org">PT Denso Manufacturing Indonesia</p>
-          <p>Bagian dari tim pengembang sistem berbasis web dan solusi Microsoft Power Platform untuk kebutuhan perusahaan, terutama operasional manufaktur. Membangun aplikasi dan automation workflow untuk meningkatkan efisiensi, akurasi data, dan merapikan proses antar departemen.</p>
-        </li>
-        <li>
-          <span class="when">Jun 2022 - Jun 2023</span>
-          <h3>Student Trainee (Program KOSEN)</h3>
-          <p class="org">PT Denso Indonesia</p>
-          <p>Terpilih sebagai salah satu lulusan SMK dalam program pendidikan tambahan PT Denso Indonesia. Program ini mengembangkan kompetensi vokasi untuk menyiapkan peserta sebelum masuk Genba (lokasi produksi) sebagai calon pemimpin atau profesional white-collar.</p>
-        </li>
-        <li>
-          <span class="when">Sep 2021 - Feb 2022</span>
-          <h3>Student Internship</h3>
-          <p class="org">PT Sanbe Farma</p>
-          <p>Help desk dan technical support.</p>
-        </li>
-      </ol>
+<!-- DEV -->
+<section class="view w" id="dev">
+  <div class="term rv"><div class="dots"><b></b><b></b><b></b></div>
+    <div><i>$</i> whoami</div><div>ramli — system developer</div>
+    <div><i>$</i> cat stack.txt</div><div>SQL Server · Power Platform · Python · Web apps · Data Structures</div>
+    <div><i>$</i> ./automate --everything<span class="caret"></span></div></div>
+  <h2 class="sec rv">Projek</h2>
+  <div class="grid g3">
+    <article class="pc proj rv"><span class="st">GANTI SENDIRI</span><h3>Aplikasi &amp; otomatisasi operasional</h3><dl><dt>MASALAH</dt><dd>Proses antar departemen manual dan data tersebar.</dd><dt>SOLUSI</dt><dd>Aplikasi web dan alur otomatisasi Power Platform untuk operasional manufaktur.</dd><dt>STACK</dt><dd>Power Platform · SQL Server · Web</dd></dl></article>
+    <article class="pc proj rv"><span class="st">GANTI SENDIRI</span><h3>HR digitalization</h3><dl><dt>MASALAH</dt><dd>Data HR dan payroll butuh alur yang lebih cepat dan akurat.</dd><dt>SOLUSI</dt><dd>Sistem HR terintegrasi yang mendukung HRIS.</dd><dt>STACK</dt><dd>HRIS · SQL</dd></dl></article>
+    <article class="pc proj rv"><span class="st">GANTI SENDIRI</span><h3>Coding dashboard</h3><dl><dt>MASALAH</dt><dd>Data sulit dipantau tanpa visualisasi.</dd><dt>SOLUSI</dt><dd>Dashboard interaktif untuk memantau data.</dd><dt>STACK</dt><dd>SQL · Python</dd></dl></article>
+  </div>
+  <p class="lead sec rv">Catatan: untuk projek dari tempat kerja, ringkas dan samarkan data internalnya sebelum dipublikasikan.</p>
+</section>
 
-      <h2 class="sub">Pendidikan</h2>
-      <div class="grid grid-3">
-        <article class="card edu">
-          <span class="when">Sekarang, semester 3</span>
-          <h3>Universitas Pelita Bangsa</h3>
-          <p class="org">S1 Teknik Informatika</p>
-          <p>Memperdalam software engineering dan AI, dengan fokus pada digitalisasi sistem HR.</p>
-        </article>
-        <article class="card edu">
-          <span class="when">Jun 2022 - Jun 2023</span>
-          <h3>Politeknik STMI Jakarta</h3>
-          <p class="org">D1 Engineering/Industrial Management</p>
-          <p>IPK 3,92. Program kerja sama PT Denso Indonesia dan Kementerian Ketenagakerjaan.</p>
-        </article>
-        <article class="card edu">
-          <span class="when">Jun 2019 - Jun 2022</span>
-          <h3>SMK Negeri 1 Cimahi</h3>
-          <p class="org">Sistem Informasi Jaringan dan Aplikasi</p>
-          <p>Web Development dan Software as a Service (SaaS).</p>
-        </article>
-      </div>
-    </section>
+<!-- KULINER -->
+<section class="view w" id="kuliner">
+  <h1 class="kh">Makan dulu, <em>baru mikir.</em></h1>
+  <p class="lead sec">Catatan perburuan kuliner: foto, rasa, dan tempat yang layak dikunjungi lagi.</p>
+  <div class="mas sec">
+    <figure class="rv"><img src="assets/kuliner-1.jpg" alt="Kuliner 1"><figcaption>Nama makanan<small>Tempat · ★★★★☆</small></figcaption></figure>
+    <figure class="rv"><img src="assets/kuliner-2.jpg" alt="Kuliner 2"><figcaption>Nama makanan<small>Tempat · ★★★★★</small></figcaption></figure>
+    <figure class="rv"><img src="assets/kuliner-3.jpg" alt="Kuliner 3"><figcaption>Nama makanan<small>Tempat · ★★★★☆</small></figcaption></figure>
+    <figure class="rv"><img src="assets/kuliner-4.jpg" alt="Kuliner 4"><figcaption>Nama makanan<small>Tempat · ★★★☆☆</small></figcaption></figure>
+  </div>
+  <div class="grid g3 sec">
+    <div class="pc rv"><h3>⭐ Favorit sepanjang masa</h3><p class="lead">Isi dengan makanan andalanmu.</p></div>
+    <div class="pc rv"><h3>🔎 Lagi dicari</h3><p class="lead">Isi dengan makanan yang mau dicoba.</p></div>
+    <div class="pc rv"><h3>📏 Aturan makan</h3><p class="lead">Isi dengan prinsip kulinermu.</p></div>
+  </div>
+</section>
 
-    <!-- PROJEK -->
-    <section id="projek" class="section">
-      <h2>Projek</h2>
-      <div class="grid grid-3">
-        <article class="card project">
-          <div class="project-icon">🧾</div>
-          <h3>HR Digitalization</h3>
-          <p>Konsep sistem digital untuk absensi, cuti, dan data karyawan dalam satu alur.</p>
-          <a class="link" href="#">Lihat detail</a>
-        </article>
-        <article class="card project">
-          <div class="project-icon">📊</div>
-          <h3>Coding Dashboard</h3>
-          <p>Dashboard interaktif untuk memantau data dengan SQL dan Python.</p>
-          <a class="link" href="#">Lihat detail</a>
-        </article>
-        <article class="card project">
-          <div class="project-icon">🎬</div>
-          <h3>Mini Vlog Edukasi</h3>
-          <p>Vlog singkat yang menjelaskan topik teknologi dengan bahasa yang gampang dicerna.</p>
-          <a class="link" href="#">Tonton</a>
-        </article>
-      </div>
-    </section>
+<!-- WEEKEND -->
+<section class="view w" id="weekend">
+  <span class="orb o1"></span><span class="orb o2"></span>
+  <h1 class="wk" style="position:relative">Weekend<br>Mode: ON</h1>
+  <p class="lead sec" style="position:relative">Setelah payroll dan kode, waktunya nongkrong, dengerin musik, dan cari cerita baru.</p>
+  <div class="grid g4 sec" style="position:relative">
+    <div class="pc tile rv"><span class="em">☕</span><h3>Nongkrong</h3><p class="lead">Tempat favorit bareng teman.</p></div>
+    <div class="pc tile rv"><span class="em">🎶</span><h3>Musik</h3><p class="lead">Playlist dan konser.</p></div>
+    <div class="pc tile rv"><span class="em">🎪</span><h3>Event</h3><p class="lead">Acara seru yang didatangi.</p></div>
+    <div class="pc tile rv"><span class="em">🧭</span><h3>Traveling</h3><p class="lead">Jalan-jalan dan petualangan.</p></div>
+  </div>
+  <div class="pc vlog sec rv" style="position:relative"><div class="play">▶</div><div><h2 style="margin:0 0 6px">Mini vlog edukasi</h2><p class="lead">Vlog singkat yang menjelaskan topik teknologi dengan bahasa yang gampang dicerna. Taruh link videomu di sini.</p></div></div>
+</section>
+</main>
 
-    <!-- SKILL -->
-    <section id="skill" class="section">
-      <h2>Skillset</h2>
-      <div class="grid grid-2">
-        <div class="card">
-          <h3>Hard skills</h3>
-          <ul class="skills">
-            <li><span>🗄️</span> SQL</li>
-            <li><span>🐍</span> Python</li>
-            <li><span>🧑‍💼</span> HR systems</li>
-            <li><span>🧩</span> Data Structures</li>
-            <li><span>💸</span> Payroll</li>
-            <li><span>⚡</span> Power Platform</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Soft skills</h3>
-          <ul class="skills">
-            <li><span>🧭</span> Leadership</li>
-            <li><span>💚</span> Empathy</li>
-            <li><span>💬</span> Communication</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<footer>
+  <span>© <span id="yr"></span> Ramli</span>
+  <div><a class="btn" href="mailto:email@contoh.com">Email</a><a class="btn" href="https://www.linkedin.com/in/andi-ramli-3215b4403" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/username" target="_blank" rel="noopener">GitHub</a></div>
+</footer>
 
-    <!-- KULINER -->
-    <section id="kuliner" class="section">
-      <h2>Side quest: kuliner</h2>
-      <p class="lead">Di luar coding, saya suka hunting makanan dan memotretnya. Ini beberapa jepretan favorit.</p>
-      <div class="gallery">
-        <figure class="polaroid" style="--tilt:-3deg">
-          <img src="assets/kuliner-1.jpg" alt="Foto kuliner 1">
-          <figcaption>Ganti dengan nama makanan</figcaption>
-        </figure>
-        <figure class="polaroid" style="--tilt:2deg">
-          <img src="assets/kuliner-2.jpg" alt="Foto kuliner 2">
-          <figcaption>Ganti dengan nama makanan</figcaption>
-        </figure>
-        <figure class="polaroid" style="--tilt:-1.5deg">
-          <img src="assets/kuliner-3.jpg" alt="Foto kuliner 3">
-          <figcaption>Ganti dengan nama makanan</figcaption>
-        </figure>
-        <figure class="polaroid" style="--tilt:3deg">
-          <img src="assets/kuliner-4.jpg" alt="Foto kuliner 4">
-          <figcaption>Ganti dengan nama makanan</figcaption>
-        </figure>
-      </div>
-    </section>
+<script>
+const $$=s=>[...document.querySelectorAll(s)];
+const P={home:'hr',profil:'hr',hr:'hr',dev:'dev',kuliner:'kuliner',weekend:'weekend'};
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+let cur='home';
+document.getElementById('yr').textContent=new Date().getFullYear();
 
-    <!-- KONTAK -->
-    <section id="kontak" class="contact card">
-      <h2>Yuk, kolaborasi</h2>
-      <p>Punya proyek, peluang magang, atau sekadar mau tukar rekomendasi makanan? Hubungi saya.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="mailto:email@contoh.com" id="mailBtn">Kirim email</a>
-        <a class="btn btn-ghost" href="https://github.com/username" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="https://linkedin.com/in/username" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-      <button class="copy" id="copyEmail" data-email="email@contoh.com">Salin email</button>
-    </section>
-  </main>
-
-  <footer class="footer">© <span id="year"></span> Ramli. Dibuat dengan HTML, CSS, dan kopi.</footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script>
-    const root = document.documentElement;
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-// ---------- Tema terang/gelap ----------
-const toggle = document.getElementById('themeToggle');
-try { const saved = localStorage.getItem('theme'); if (saved) root.dataset.theme = saved; } catch (e) {}
-toggle.addEventListener('click', () => {
-  const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-  root.dataset.theme = next;
-  try { localStorage.setItem('theme', next); } catch (e) {}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+function reveal(){
+  $$('.view.on .rv:not(.in)').forEach(el=>{el.style.setProperty('--d',Math.min([...el.parentElement.children].indexOf(el),6)*.09+'s');io.observe(el)});
+}
+function show(id){
+  cur=id;document.body.dataset.p=P[id];
+  $$('.view').forEach(v=>v.classList.toggle('on',v.id===id));
+  $$('.nav button').forEach(b=>b.classList.toggle('act',b.dataset.go===id));
+  scrollTo(0,0);reveal();
+}
+function go(id,push=true){
+  if(!P[id])id='home';
+  if(push)history.pushState(null,'','#'+id);
+  if(document.startViewTransition&&!reduce)document.startViewTransition(()=>show(id));else show(id);
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-go]');
+  if(t){e.preventDefault();go(t.dataset.go)}
+  const s=e.target.closest('[data-scroll]');
+  if(s){e.preventDefault();document.querySelector(s.getAttribute('href')).scrollIntoView({behavior:'smooth'})}
 });
+addEventListener('popstate',()=>go(location.hash.slice(1),false));
 
-// ---------- Toast + salin email ----------
-const toast = document.getElementById('toast');
-function showToast(msg) {
-  toast.textContent = msg;
-  toast.classList.add('show');
-  setTimeout(() => toast.classList.remove('show'), 1800);
-}
-document.getElementById('copyEmail').addEventListener('click', async (e) => {
-  try { await navigator.clipboard.writeText(e.currentTarget.dataset.email); showToast('Email tersalin'); }
-  catch (err) { showToast('Gagal menyalin, salin manual ya'); }
-});
-document.getElementById('year').textContent = new Date().getFullYear();
+// progress bar
+addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;document.getElementById('prog').style.width=(m>0?scrollY/m*100:0)+'%'},{passive:true});
 
-// ---------- Progress bar scroll ----------
-const progress = document.getElementById('progress');
-function onScroll() {
-  const max = document.documentElement.scrollHeight - innerHeight;
-  progress.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
-}
-addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+// glow kartu mengikuti kursor
+$$('.pc').forEach(c=>c.addEventListener('pointermove',e=>{const b=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-b.left+'px');c.style.setProperty('--my',e.clientY-b.top+'px')}));
 
-// ---------- Menu aktif sesuai section ----------
-const links = [...document.querySelectorAll('.topbar nav a')];
-const spy = new IntersectionObserver((entries) => {
-  entries.forEach((en) => {
-    if (en.isIntersecting) links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
+if(!reduce){
+  document.documentElement.classList.add('js');
+  // huruf nama
+  const n=document.getElementById('name');
+  n.innerHTML=[...n.textContent].map((c,i)=>`<span style="--i:${i}">${c}</span>`).join('');
+  // typing
+  const roles=['HR Officer','System Developer','Payroll PIC','Food Hunter','Weekend Mode: ON'],ty=document.getElementById('typed');
+  let r=0,c=0,d=false;
+  (function tick(){const w=roles[r];ty.textContent=w.slice(0,c);
+    if(!d&&c===w.length){d=true;return setTimeout(tick,1400)}
+    if(d&&c===0){d=false;r=(r+1)%roles.length}
+    c+=d?-1:1;setTimeout(tick,d?40:85)})();
+  // hover kartu: warna halaman ikut berubah
+  if(fine)$$('.cards .cd').forEach(k=>{
+    k.addEventListener('mouseenter',()=>{if(cur==='home')document.body.dataset.p=k.dataset.p});
+    k.addEventListener('mouseleave',()=>{if(cur==='home')document.body.dataset.p='hr'});
   });
-}, { rootMargin: '-45% 0px -50% 0px' });
-links.forEach((a) => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
-
-// ---------- Motion (dilewati kalau pengguna memilih reduce motion) ----------
-if (!reduce) {
-  // Nama: huruf muncul satu-satu
-  const h1 = document.querySelector('.hero h1');
-  h1.innerHTML = [...h1.textContent].map((c, i) => `<span class="ch" style="--i:${i}">${c}</span>`).join('');
-
-  // Teks role mengetik
-  const roles = ['HR Officer', 'System Developer', 'Payroll PIC', 'Food Hunter', 'Mahasiswa Informatika'];
-  const typed = document.getElementById('typed');
-  let r = 0, c = 0, del = false;
-  (function tick() {
-    const word = roles[r];
-    typed.textContent = word.slice(0, c);
-    if (!del && c === word.length) { del = true; return setTimeout(tick, 1400); }
-    if (del && c === 0) { del = false; r = (r + 1) % roles.length; }
-    c += del ? -1 : 1;
-    setTimeout(tick, del ? 40 : 85);
-  })();
-
-  // Reveal saat scroll, dengan jeda bertingkat
-  const targets = document.querySelectorAll('.about, .project, .skills li, .edu, .timeline li, .polaroid, .contact, .section > h2, .lead');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => {
-      if (!en.isIntersecting) return;
-      const el = en.target;
-      el.classList.add('in');
-      io.unobserve(el);
-      const delay = parseFloat(el.style.getPropertyValue('--d')) || 0;
-      setTimeout(() => el.classList.remove('reveal', 'in'), 900 + delay * 1000);
-    });
-  }, { threshold: 0.15 });
-  targets.forEach((el) => {
-    const idx = [...el.parentElement.children].indexOf(el);
-    el.style.setProperty('--d', Math.min(idx, 6) * 0.09 + 's');
-    el.classList.add('reveal');
-    io.observe(el);
-  });
-
-  // Kartu miring 3D mengikuti kursor (hanya perangkat dengan mouse)
-  if (finePointer) {
-    document.querySelectorAll('.project, .edu').forEach((el) => {
-      el.addEventListener('pointermove', (e) => {
-        const b = el.getBoundingClientRect();
-        const x = (e.clientX - b.left) / b.width - 0.5, y = (e.clientY - b.top) / b.height - 0.5;
-        el.style.transition = 'transform .1s ease-out, border-color .2s, box-shadow .25s';
-        el.style.transform = `perspective(700px) rotateX(${-y * 7}deg) rotateY(${x * 7}deg) translateY(-4px)`;
-      });
-      el.addEventListener('pointerleave', () => {
-        el.style.transition = 'transform .45s cubic-bezier(.2,.8,.2,1), border-color .2s, box-shadow .25s';
-        el.style.transform = '';
-      });
-    });
-  }
 }
-  </script>
+go(location.hash.slice(1)||'home',false);
+</script>
 </body>
 </html>
