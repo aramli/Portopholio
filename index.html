@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="progress" id="progress"></div>
   <header class="topbar">
     <a class="brand" href="#top">ramli.</a>
     <nav>
@@ -27,14 +28,18 @@
   <main id="top" class="wrap">
     <!-- HERO -->
     <section class="hero card">
+      <span class="blob b1" aria-hidden="true"></span><span class="blob b2" aria-hidden="true"></span>
       <span class="chip chip-live"><i></i> HR Officer di PT Denso Manufacturing Indonesia</span>
       <h1>Ramli</h1>
       <p class="tagline">Efficiency in systems, empathy in people.</p>
+      <p class="role">Lagi jadi: <span id="typed">HR Officer</span><i class="caret"></i></p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#projek">Lihat projek</a>
         <a class="btn btn-ghost" href="#kontak">Ajak ngobrol</a>
       </div>
     </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>HR Digitalization</span><span>Payroll</span><span>HRIS</span><span>AI</span><span>Power Platform</span><span>SQL Server</span><span>Python</span><span>Kuliner</span><span>HR Digitalization</span><span>Payroll</span><span>HRIS</span><span>AI</span><span>Power Platform</span><span>SQL Server</span><span>Python</span><span>Kuliner</span></div></div>
 
     <!-- TENTANG -->
     <section id="tentang" class="about card">
@@ -61,19 +66,19 @@
           <span class="when">Jul 2025 - sekarang</span>
           <h3>Human Resources Officer</h3>
           <p class="org">PT Denso Manufacturing Indonesia, Cikarang Barat</p>
-          <p>PIC payroll dan inisiatif HR digitalization. Memastikan akurasi, kepatuhan, dan ketepatan waktu penggajian.</p>
+          <p>PIC payroll dan inisiatif HR digitalization. Memastikan akurasi, kepatuhan, dan ketepatan waktu payroll, sambil mendukung implementasi HRIS untuk meningkatkan efisiensi. Aktif berkolaborasi lintas departemen untuk menghadirkan solusi HR yang transparan dan efektif sesuai kebutuhan bisnis.</p>
         </li>
         <li>
           <span class="when">Jun 2023 - Jun 2025</span>
           <h3>System Developer</h3>
           <p class="org">PT Denso Manufacturing Indonesia</p>
-          <p>Bagian dari tim pengembang sistem berbasis web dan solusi Microsoft Power Platform. Menggunakan Microsoft SQL Server dan DBMS.</p>
+          <p>Bagian dari tim pengembang sistem berbasis web dan solusi Microsoft Power Platform untuk kebutuhan perusahaan, terutama operasional manufaktur. Membangun aplikasi dan automation workflow untuk meningkatkan efisiensi, akurasi data, dan merapikan proses antar departemen.</p>
         </li>
         <li>
           <span class="when">Jun 2022 - Jun 2023</span>
           <h3>Student Trainee (Program KOSEN)</h3>
           <p class="org">PT Denso Indonesia</p>
-          <p>Terpilih sebagai salah satu lulusan SMK dalam program KOSEN. Belajar Quality Control, Equipment Maintenance, Full-Stack Development, dan IoT.</p>
+          <p>Terpilih sebagai salah satu lulusan SMK dalam program pendidikan tambahan PT Denso Indonesia. Program ini mengembangkan kompetensi vokasi untuk menyiapkan peserta sebelum masuk Genba (lokasi produksi) sebagai calon pemimpin atau profesional white-collar.</p>
         </li>
         <li>
           <span class="when">Sep 2021 - Feb 2022</span>
@@ -84,7 +89,13 @@
       </ol>
 
       <h2 class="sub">Pendidikan</h2>
-      <div class="grid grid-2">
+      <div class="grid grid-3">
+        <article class="card edu">
+          <span class="when">Sekarang, semester 3</span>
+          <h3>Universitas Pelita Bangsa</h3>
+          <p class="org">S1 Teknik Informatika</p>
+          <p>Memperdalam software engineering dan AI, dengan fokus pada digitalisasi sistem HR.</p>
+        </article>
         <article class="card edu">
           <span class="when">Jun 2022 - Jun 2023</span>
           <h3>Politeknik STMI Jakarta</h3>
