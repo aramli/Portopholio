@@ -47,6 +47,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .lead{color:var(--muted);max-width:62ch;font-size:1.05rem}
 .grid{display:grid;gap:20px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
 .sec{margin-top:clamp(40px,6vw,72px)}
+#kenali{scroll-margin-top:90px}
 /* HOME */
 .hero{min-height:82vh;display:flex;flex-direction:column;justify-content:center;gap:16px;padding-top:40px}
 .hero h1{font-size:clamp(4.5rem,21vw,17rem);font-weight:800;letter-spacing:-.06em;line-height:.9}
@@ -236,7 +237,7 @@ footer div{display:flex;flex-wrap:wrap;gap:10px}
 </main>
 
 <footer>
-  <span>© <span id="yr"></span> Ramli. Dibuat dengan HTML, CSS, dan caramel machiato nya kopi kenangan .</span>
+  <span>© <span id="yr"></span> Ramli</span>
   <div><a class="btn" href="mailto:email@contoh.com">Email</a><a class="btn" href="https://www.linkedin.com/in/andi-ramli-3215b4403" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/username" target="_blank" rel="noopener">GitHub</a></div>
 </footer>
 
@@ -248,7 +249,7 @@ const fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
 let cur='home';
 document.getElementById('yr').textContent=new Date().getFullYear();
 
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const t=e.target;t.classList.add('in');io.unobserve(t);setTimeout(()=>t.classList.remove('rv','in'),900+(parseFloat(t.style.getPropertyValue('--d'))||0)*1000)}}),{threshold:.12});
 function reveal(){
   $$('.view.on .rv:not(.in)').forEach(el=>{el.style.setProperty('--d',Math.min([...el.parentElement.children].indexOf(el),6)*.09+'s');io.observe(el)});
 }
